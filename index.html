@@ -1,61 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dice</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <style>
-        .locked{
-            border:3px solid #f16c7a;
-            
-        }
-        container{
-            max-width: 600px;
-        }
-        .hide{
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <style>
+    .locked {
+      border: 3px solid #f16c7a;
+
+    }
+
+    container {
+      max-width: 600px;
+    }
+
+    .hide {
+      display: none;
+    }
+    .dice{
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="row">
-            <h1>
-                Roll the dice
-            </h1>
-            <p>IF you have 5 the same dices, you win de game. Click on the dice to lock it</p>
-            <p>Number of rolls so far: <span id="counter">0</span> -  Max number of rolls = 6 </p>
-        </div>
-        <div class="row">
-          <div class="col">
-           <img src="images/dice-1.png" alt="" id="dice-1" class="dice">
-          </div>
-          <div class="col">
-            <img src="images/dice-1.png" alt="" id="dice-2" class="dice">
-          </div>
-          <div class="col">
-            <img src="images/dice-1.png" alt="" id="dice-3" class="dice">
-          </div>
-          <div class="col">
-            <img src="images/dice-1.png" alt="" id="dice-4" class="dice">
-          </div>
-          <div class="col">
-            <img src="images/dice-1.png" alt="" id="dice-5" class="dice"> 
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary" id="btn-roll">
-                Roll
-            </button>
-          </div>
-        </div>
-        <div class="row mt-3">
-            <div class="alert alert-success hide" role="alert" id="alert">
-                A simple success alert—check it out!
-              </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <h1>
+        Roll the dice
+      </h1>
+      <p>IF you have 5 the same dices, you win de game. Click on the dice to lock it</p>
+      <p>Number of rolls so far: <span id="counter">0</span> - Max number of rolls = 6 </p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <img src="images/dice-1.png" alt="dice" class="dice">
       </div>
-    <script src="app.js"></script>
+      <div class="col">
+        <img src="images/dice-1.png" alt="dice" class="dice">
+      </div>
+      <div class="col">
+        <img src="images/dice-1.png" alt="dice" class="dice">
+      </div>
+      <div class="col">
+        <img src="images/dice-1.png" alt="dice" class="dice">
+      </div>
+      <div class="col">
+        <img src="images/dice-1.png" alt="dice" class="dice">
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary" id="btn-roll">
+          Roll
+        </button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="alert alert-success hide" role="alert" id="alert">
+        A simple success alert—check it out!
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
 </body>
+
 </html>
