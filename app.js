@@ -20,7 +20,7 @@ const generateRandomDice = () => {
 const setAlert = (isSucces, message) => {
     divAlert.innerText = message;
     isSucces ? divAlert.classList = 'alert alert-success' : divAlert.classList = 'alert alert-danger';
-  
+
 }
 
 //Returns true false, check if dice is not locked
@@ -50,8 +50,9 @@ const allDicesTheSame = () => {
 
 //Roll the dices who are not locked
 const roll = () => {
-
-    if (counter < maxCounts) {
+    if (allDicesTheSame()) {
+        startGame();
+    } else if (counter < maxCounts) {
         counter++
         spanCounter.innerText = counter;
         for (dice of allDices) {
@@ -84,6 +85,7 @@ const roll = () => {
 const startGame = () => {
     btnRoll.innerText = 'Roll';
     counter = 0;
+    spanCounter.innerText = counter;
     divAlert.classList.add('hide')
     for (dice of allDices) {
         dice.src = generateRandomDice();
