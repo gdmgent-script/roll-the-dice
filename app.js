@@ -2,10 +2,12 @@
 const allDices = document.getElementsByClassName('dice');
 const btnRoll = document.getElementById('btn-roll');
 const spanCounter = document.getElementById('counter');
+const spanCounterGames = document.getElementById('counter-games');
 const divAlert = document.getElementById('alert');
 
 let maxCounts = 6;
 let counter = 0;
+let counterGames = 0;
 
 //Lock a dice
 const lockDice = (dice) => {
@@ -54,7 +56,7 @@ const roll = () => {
         startGame();
     } else if (counter < maxCounts) {
         counter++
-        spanCounter.innerText = counter;
+        spanCounter.innerText = maxCounts - counter;
         for (dice of allDices) {
             if (checkIfNotLocked(dice)) {
                 dice.src = generateRandomDice();
@@ -64,18 +66,23 @@ const roll = () => {
         if (allDicesTheSame()) {
             setAlert(true, 'Yay, You won. Click Restart to start a new game!');
             btnRoll.innerText = 'Restart';
+            counterGames = 0;
+            spanCounterGames.innerText = counterGames;
         } else {
             divAlert.classList.add('hide');
         }
         if ((counter == maxCounts) && allDicesTheSame() === false) {
             setAlert(false, 'Oh No, game Over. Click Restart to start a new ame');
             btnRoll.innerText = 'Restart';
+            counterGames++;
+            spanCounterGames.innerText = counterGames;
+
         }
 
     } else {
         //Reset counter
         counter = 0;
-        spanCounter.innerText = counter;
+        spanCounter.innerText = maxCounts - counter;
         startGame();
     }
 
@@ -85,7 +92,7 @@ const roll = () => {
 const startGame = () => {
     btnRoll.innerText = 'Roll';
     counter = 0;
-    spanCounter.innerText = counter;
+    spanCounter.innerText = maxCounts - counter;
     divAlert.classList.add('hide')
     for (dice of allDices) {
         dice.src = generateRandomDice();

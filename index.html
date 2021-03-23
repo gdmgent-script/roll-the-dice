@@ -10,9 +10,11 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <style>
     .locked {
-      border: 3px solid #f16c7a;
+      border-bottom: 4px solid #f16c7a;
+    padding-bottom: 5px;
 
     }
+
 
     container {
       max-width: 600px;
@@ -24,10 +26,20 @@
     .dice{
       cursor: pointer;
     }
-    #counter{
+    #counter,#counter-games{
       font-weight: 900;
       
     }
+    .alert-danger {
+    color: #f16c7a;
+    background-color: hsl(354, 83%, 90%);
+    border-color: hsl(354, 83%, 90%);;
+}
+.alert-success {
+    color: hsl(120deg 28% 41%);
+    background-color: hsl(120deg 83% 90%);
+    border-color: hsl(120deg 83% 90%);
+}
   </style>
 </head>
 
@@ -38,7 +50,7 @@
         Roll the dice
       </h1>
       <p>IF you have 5 the same dices, you win de game. Click on the dice to lock it</p>
-      <p>Number of rolls so far: <span id="counter">0</span> - Max number of rolls = 6 </p>
+      <p>Rolls left: <span id="counter">0</span> Number of try-outs:<span id="counter-games">0</span></p>
     </div>
     <div class="row">
       <div class="col">
