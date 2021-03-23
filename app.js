@@ -34,11 +34,11 @@ const generateRandomDice = () => {
  */
 const setAlert = (isSucces, message) => {
     divAlert.innerText = message;
-    isSucces ? divAlert.classList = 'alert alert-success' : divAlert.classList = 'alert alert-danger';
+    divAlert.classList  = isSucces ? 'alert alert-success' : 'alert alert-danger';
 }
 
 /** 
- * Create alert with message 
+ * Checks if dice is locked
  * 
  * @param {object} dice 
  * @return {boolean} 
@@ -59,13 +59,8 @@ const allDicesTheSame = () => {
     for (dice of allDices) {
         srcOne ? srcTwo = dice.src : srcOne = dice.src;
         if (srcTwo) {
-            if (srcOne === srcTwo) {
-                isTheSame = true
-            } else {
-                //If one is not equel stop the check and set isTheSame to false
-                isTheSame = false;
-                break
-            }
+            isTheSame = (srcOne === srcTwo) ? true : false;
+            if (!isTheSame) break;
         }
     }
     return isTheSame;
@@ -73,7 +68,7 @@ const allDicesTheSame = () => {
 
 
 /** 
- * Roll the dices who are not locked
+ * Roll the dices that are not locked
  * 
  */
 const roll = () => {
@@ -103,9 +98,6 @@ const roll = () => {
             spanCounterGames.innerText = counterGames;
         }
     } else {
-        //Reset counter
-        counter = 0;
-        spanCounter.innerText = maxCounts - counter;
         startGame();
     }
 

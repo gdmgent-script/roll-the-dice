@@ -40,14 +40,15 @@
     border-color: hsl(120deg 83% 90%);
 }
 
-.btn-primary {
+.btn-primary, .btn-check:focus+.btn-primary, .btn-primary:focus {
     background-color: #9e8adb;
     border-color: #846ccc;
+    box-shadow: none;
 }
-.btn-primary:hover, .btn-check:focus+.btn-primary, .btn-primary:focus{
+.btn-primary:hover {
     background-color: #673ab7;
     border-color: #673ab7;
-    box-shadow: none;
+    
 }
 
 @media (min-width: 900px) {
