@@ -1,0 +1,57 @@
+
+.container {
+    margin-top: 40px;
+}
+
+.row {
+    margin-bottom: 40px;
+}
+
+.hide {
+    display: none;
+}
+
+.locked {
+    border-bottom: 4px solid #f16c7a;
+    padding-bottom: 5px;
+
+}
+
+.dice {
+    cursor: pointer;
+}
+
+#counter,
+#counter-games {
+    font-weight: 900;
+
+}
+
+.alert-danger {
+    color: #f16c7a;
+    background-color: hsl(354, 83%, 90%);
+    border-color: hsl(354, 83%, 90%);
+    ;
+}
+
+.alert-success {
+    color: hsl(120deg 28% 41%);
+    background-color: hsl(120deg 83% 90%);
+    border-color: hsl(120deg 83% 90%);
+}
+
+.btn-primary {
+    background-color: #9e8adb;
+    border-color: #846ccc;
+}
+.btn-primary:hover{
+    background-color: #673ab7;
+    border-color: #673ab7;
+}
+@media (min-width: 900px) {
+
+    div.container
+     {
+        max-width: 800px;
+    }
+}
