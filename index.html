@@ -8,10 +8,11 @@
   <title>Dice</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     .locked {
       border-bottom: 4px solid #f16c7a;
-    padding-bottom: 5px;
+      padding-bottom: 5px;
 
     }
 
@@ -23,23 +24,35 @@
     .hide {
       display: none;
     }
-    .dice{
+
+    .dice {
       cursor: pointer;
     }
-    #counter,#counter-games{
+
+    #counter,
+    #counter-games {
       font-weight: 900;
-      
+
     }
+
     .alert-danger {
-    color: #f16c7a;
-    background-color: hsl(354, 83%, 90%);
-    border-color: hsl(354, 83%, 90%);;
-}
-.alert-success {
-    color: hsl(120deg 28% 41%);
-    background-color: hsl(120deg 83% 90%);
-    border-color: hsl(120deg 83% 90%);
-}
+      color: #f16c7a;
+      background-color: hsl(354, 83%, 90%);
+      border-color: hsl(354, 83%, 90%);
+      ;
+    }
+
+    .alert-success {
+      color: hsl(120deg 28% 41%);
+      background-color: hsl(120deg 83% 90%);
+      border-color: hsl(120deg 83% 90%);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background-color: #9e8adb;
+      border-color: #846ccc;
+    }
   </style>
 </head>
 
@@ -70,7 +83,7 @@
       </div>
       <div class="col">
         <button type="button" class="btn btn-primary" id="btn-roll">
-          Roll
+          <i class="fas fa-dice"></i> Roll
         </button>
       </div>
     </div>

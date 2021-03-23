@@ -9,28 +9,49 @@ let maxCounts = 6;
 let counter = 0;
 let counterGames = 0;
 
-//Lock a dice
+/** 
+ * Lock a dice
+ * 
+ */
 const lockDice = (dice) => {
     dice.classList.toggle('locked');
 };
 
-//Generate random image of dice
+/** 
+ * Generate random image of a dic 1 - 6
+ * 
+ * @return {string} dice-image path
+ */
 const generateRandomDice = () => {
     return `images/dice-${Math.ceil(Math.random() * 6)}.png`;
 }
 
+/** 
+ * Create alert - message 
+ * 
+ * @param {boolean} isSucces 
+ * @param {string} message 
+ */
 const setAlert = (isSucces, message) => {
     divAlert.innerText = message;
     isSucces ? divAlert.classList = 'alert alert-success' : divAlert.classList = 'alert alert-danger';
-
 }
 
-//Returns true false, check if dice is not locked
+/** 
+ * Create alert with message 
+ * 
+ * @param {object} dice 
+ * @return {boolean} 
+ */
 const checkIfNotLocked = (dice) => {
     return dice.classList.contains('locked') ? false : true;
 }
 
-//Returns true or false if all dices are the same
+/** 
+ * Checks if all the dices are the same
+ * 
+ * @return {boolean} 
+ */
 const allDicesTheSame = () => {
     let srcOne;
     let srcTwo;
@@ -41,7 +62,7 @@ const allDicesTheSame = () => {
             if (srcOne === srcTwo) {
                 isTheSame = true
             } else {
-                //If one is not equel stop the check en set isTheSame to false
+                //If one is not equel stop the check and set isTheSame to false
                 isTheSame = false;
                 break
             }
@@ -50,7 +71,11 @@ const allDicesTheSame = () => {
     return isTheSame;
 }
 
-//Roll the dices who are not locked
+
+/** 
+ * Roll the dices who are not locked
+ * 
+ */
 const roll = () => {
     if (allDicesTheSame()) {
         startGame();
@@ -76,9 +101,7 @@ const roll = () => {
             btnRoll.innerText = 'Restart';
             counterGames++;
             spanCounterGames.innerText = counterGames;
-
         }
-
     } else {
         //Reset counter
         counter = 0;
@@ -88,9 +111,12 @@ const roll = () => {
 
 }
 
-//start/restart the game
+/** 
+ * Start or Restart game
+ * 
+ */
 const startGame = () => {
-    btnRoll.innerText = 'Roll';
+    btnRoll.innerHTML = '<i class="fas fa-dice"></i> Roll';
     counter = 0;
     spanCounter.innerText = maxCounts - counter;
     divAlert.classList.add('hide')
